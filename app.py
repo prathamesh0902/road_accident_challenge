@@ -6,7 +6,7 @@ import pickle
 st.set_page_config(page_title="Accident Risk Predictor", page_icon="🚦", layout="wide")
 st.title("🚦 Road Accident Challenge Prediction")
 
-model_file = "predictions_modelling1.pkl"
+model_file = "predictions_modelling2.pkl"
 
 # =====================================================
 # Load model from pickle and predict on manual input
