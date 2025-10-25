@@ -1,19 +1,32 @@
 import streamlit as st
 import pandas as pd
 import os
-import pickle
+# import pickle
+import joblib
 
 st.set_page_config(page_title="Accident Risk Predictor", page_icon="🚦", layout="wide")
 st.title("🚦 Road Accident Challenge Prediction")
 
-model_file = "predictions_modelling2.pkl"
+model_file = 'predictions_modelling2.pkl'
+req_file = "requirements.txt"
+
+# =====================================================
+# Load requirement file
+# =====================================================
+if os.path.exists(req_file):
+    with open(req_file, "rb") as f:
+        print("1")
+
+    st.success("✅ Loaded requirement file!")
 
 # =====================================================
 # Load model from pickle and predict on manual input
 # =====================================================
-if os.path.exists(model_file):
-    with open(model_file, "rb") as f:
-        model = pickle.load(f)
+# if os.path.exists(model_file):
+#     with open(model_file, "rb") as f:
+#         model = pickle.load(f)
+
+    model = joblib.load("predictions_modelling2.pkl")
 
     st.success("✅ Loaded trained model for prediction!")
 
